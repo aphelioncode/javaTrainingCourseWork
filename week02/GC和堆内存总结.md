@@ -12,15 +12,15 @@
 # -XX:+UseParNewGC
 ParNew 收集器，多线程版本的 Serial。配合 CMS 使用。
 
-#Parallel GC
+# Parallel GC
 -XX:UseParallelGC -XX:UseParallelOldGC
 使用的 GC 算法和串行的一样。
 默认的 GC 线程数是 CPU core 数，该收集器的目标更倾向于提高系统吞吐量，有时候单次的 GC 暂停时间较长。
 
-#CMS GC
+# CMS GC
 -XX:UseConcMarkSweepGC
 对老年代没有整理操作，使用 free-list 进行内存空间的管理。默认的核心线程数 CPU 核数 / 4。
 可以和业务线程并发执行，GC 暂停时间少。
 
-#G1 GC
+# G1 GC
 打破整个分区的理论，把内存划分成多个小块进行管理。对每个小块的垃圾数量进行预估，优先回收垃圾多的 Region。可预期的垃圾停顿时间。
